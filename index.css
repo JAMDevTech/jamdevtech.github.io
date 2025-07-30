@@ -76,3 +76,7 @@ p{
 .nav-bar li ul li a {
     padding: 12px 16px;
 }
+
+.active {
+    background-color: olivedrab;
+}

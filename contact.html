@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="index.css">
+    <link rel
+    <title>JAM Dev Tech</title>
+</head>
+<body>
+    <div id="header" class="header">
+        <h1>
+            JAM Dev Technologies
+        </h1>
+    </div>
+    <div id="nav-bar" class="nav-bar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="#contact" class="active">Contact</a></li>
+        </ul>
+    </div>
+    <div id="flex-contact" class="flex-contact">
+        <div id="contact-form" class="contact-form">
+            <h2>Contact Us</h2>
+            <form action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
+
+        </div>
+        <div id="placeholder" class="placeholder">
+            <p>Testing this to see</p>
+        </div>
+    </div>
+</body>
+<script>
+    import sendWebhookMessage from './javascript/index.js';
+    const formName = document.getElementById('name');
+    const formEmail = document.getElementById('email');
+    const formMessage = document.getElementById('message');
+
+    document.querySelector('form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        console.log('Form submitted:', formName.value, formEmail.value, formMessage.value);
+        // Call the function to send the webhook message
+        sendWebhookMessage(formName.value, formEmail.value, formMessage.value);
+        formName.value = '';
+        formEmail.value = '';
+        formMessage.value = '';
+    });
+
+    
+</script>
